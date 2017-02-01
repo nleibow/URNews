@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URNews</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+	<script src='/app.js'></script>
+	<script src='/bower_components/checklist-model/checklist-model.js'></script>
+</head>
+<body ng-app="ngNews">
+<div ng-controller="ChoiceController">
+
+<!-- <form  ng-submit="submit()">
+  <ul class="list-group list-group-flush" ng-repeat="role in roles">
+    <li class="list-group-item"><label ng-repeat="role in roles" >
+			  <input type="checkbox" checklist-model="user.roles" checklist-value="role.id"> {{role.text}}
+
+			</label>Cras justo odio</li>
+    
+  </ul>
+</form> -->
+<div class="container">
+
+<h1>Welcome to URNEWS</h1>
+<h2>Go through the checklist below to choose from 50+ credible news sites to create URNews feed</h2>
+</div>
+	<form  ng-submit="submit()" class="list-group list-group-flush">
+			<label ng-repeat="role in roles" class=" .col-lg-4 list-group-item" >
+			  <input type="checkbox" checklist-model="user.roles" checklist-value="role.id"> {{role.text}}
+
+			</label>
+		<!-- {{user.roles}} -->
+		<input type="submit" name="submit">
+		
+	</form>
+
+
+
+
+
+
+<h1>Scroll Down to View Your Personalized News Feed!</h1>	
+	<div  class="container" ng-repeat="(source, articles) in sources">
+		<div class="card">
+			<h1 class="card-block text-center">{{ source }}</h1> <br>
+		</div>	
+			<!-- <ul ng-repeat="article in articles"> -->
+			<div ng-repeat="article in articles" class="card row text-center" style="width: 40rem; ">
+  				<img style="width: 40rem; height: 20rem;" class="card-img-top" src="{{article.urlToImage}}" alt="Failed to load image">
+  				<div class="card-block col">
+    				<h4 class="card-title">{{ article.title }}</h4>
+    				<p class="card-text">{{article.description}}</p>
+    				<a href="{{ article.url }}" class="btn btn-primary">Click to Go to Article</a>
+  			</div>
+	</div>
+				<!-- <li><h2>{{ article.title }}</h2></li>
+				<li>{{article.description}}</li>
+				<li><a href="{{ article.url }}">Click to Go to Article</a></li>
+				
+			</ul> -->
+
+				<!-- <div ng-repeat="new in news">
+
+				<h1>{{ new.title }}</h1>
+				<h2>{{ new.description}}</h2>
+				<h2>{{ new.url }}</h2>
+				<h2>{{ new.urlToImage }}</h2> 
+
+				</div> -->
+		
+	</div>
+</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

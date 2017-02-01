@@ -1,0 +1,19 @@
+{
+  "name": "project-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "dom-storage": "^2.0.2",
+    "express": "^4.14.1",
+    "newsapi": "^1.0.2",
+    "request": "^2.79.0"
+  }
+}

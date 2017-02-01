@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "authors": [
+    "nleibow <nathan.leibowitz1@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "checklist-model": "^0.10.0"
+  }
+}
